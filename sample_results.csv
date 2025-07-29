@@ -1,0 +1,5 @@
+Name,RegNo,Year,Branch,Phone,SGPA,Status,Failed_Subjects
+Lokesh,21CSE123,3,ECE,xxxxxxxxx,8.6,Pass,
+Karthik,23B91A6373,2,CSD,xxxxxxxxxx,7.9,Pass,
+Eswaran,23B91A6480,2,CSE,xxxxxxxxxx,0.0,Fail,Maths;Physics
+ 

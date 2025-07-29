@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delivery Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #e0ecf8, #f1f5f9);
+    }
+    .header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .btn-secondary {
+      background-color: #475569;
+      border: none;
+    }
+    .btn-secondary:hover {
+      background-color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="header text-center shadow">
+      <h2 class="mb-0">📬 SMS Delivery Report</h2>
+      <p class="mb-0">Check who received the results</p>
+    </div>
+
+    <div class="card shadow p-4">
+      <a href="/" class="btn btn-secondary mb-3">← Back to Upload</a>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for name, phone, status in results %}
+          <tr class="{% if 'Success' in status %}table-success{% else %}table-danger{% endif %}">
+            <td>{{ name }}</td>
+            <td>{{ phone }}</td>
+            <td>{{ status }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
